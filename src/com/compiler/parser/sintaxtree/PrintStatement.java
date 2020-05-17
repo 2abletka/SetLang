@@ -1,8 +1,9 @@
 package com.compiler.parser.sintaxtree;
 
-import com.compiler.variables.NumberValue;
-import com.compiler.variables.StringValue;
-import com.compiler.variables.Value;
+import com.compiler.Context;
+import com.compiler.vars.NumberValue;
+import com.compiler.vars.StringValue;
+import com.compiler.vars.Value;
 
 public final class PrintStatement implements Statement {
     private final Expression expression;

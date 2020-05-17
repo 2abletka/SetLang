@@ -1,5 +1,7 @@
 package com.compiler.parser.sintaxtree;
 
+import com.compiler.Context;
+
 public class IfStatement implements Statement {
     private final Expression expression;
     private final Statement ifStatement;
@@ -14,30 +16,15 @@ public class IfStatement implements Statement {
     @Override
     public void execute() {
         final double result = expression.evaluate().asNumber();
-
         Context.appendNewString("if " + expression);
         Context.appendCurrentString(" {");
-//        if () {
-//
-//        }
-
-//        if (result != 0) {
-            ifStatement.execute();
-//        } else {
-//            elseStatement.execute();
-//        }
-
+        ifStatement.execute();
         Context.appendNewString("}");
-
         if (elseStatement != null) {
             Context.appendCurrentString(" else {");
             elseStatement.execute();
             Context.appendNewString(" }");
         }
-        /*
-         * Write to file
-         * */
-
     }
 
     @Override

@@ -1,7 +1,8 @@
 package com.compiler.parser.sintaxtree;
 
-import main.java.com.vectorforce.compiler.vars.NumberValue;
-import main.java.com.vectorforce.compiler.vars.Value;
+
+import com.compiler.vars.NumberValue;
+import com.compiler.vars.Value;
 
 public class ConditionalExpression implements Expression {
     public enum Operator {

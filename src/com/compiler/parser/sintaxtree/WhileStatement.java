@@ -1,5 +1,7 @@
 package com.compiler.parser.sintaxtree;
 
+import com.compiler.Context;
+
 public class WhileStatement implements Statement {
     private final Expression condition;
     private final Statement statement;
@@ -11,21 +13,9 @@ public class WhileStatement implements Statement {
 
     @Override
     public void execute() {
-        /*
-         * Write to file
-         * */
         Context.appendNewString("while " + condition + " {");
         statement.execute();
         Context.appendNewString(" }");
 
-//        while (condition.evaluate().asNumber() != 0) {
-//            try {
-//                statement.execute();
-//            } catch (BreakStatement e) {
-//                break;
-//            } catch (ContinueStatement e) {
-//                continue;
-//            }
-//        }
     }
 }

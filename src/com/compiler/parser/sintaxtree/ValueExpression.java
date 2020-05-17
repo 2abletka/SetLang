@@ -1,8 +1,9 @@
 package com.compiler.parser.sintaxtree;
 
-import main.java.com.vectorforce.compiler.vars.NumberValue;
-import main.java.com.vectorforce.compiler.vars.StringValue;
-import main.java.com.vectorforce.compiler.vars.Value;
+
+import com.compiler.vars.NumberValue;
+import com.compiler.vars.StringValue;
+import com.compiler.vars.Value;
 
 public class ValueExpression implements Expression {
     private final Value value;

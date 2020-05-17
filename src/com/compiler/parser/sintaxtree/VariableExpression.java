@@ -1,8 +1,9 @@
 package com.compiler.parser.sintaxtree;
 
-import main.java.com.vectorforce.compiler.vars.NumberValue;
-import main.java.com.vectorforce.compiler.vars.Value;
-import main.java.com.vectorforce.compiler.vars.Variables;
+
+import com.compiler.vars.NumberValue;
+import com.compiler.vars.Value;
+import com.compiler.vars.Variables;
 
 public class VariableExpression implements Expression {
     private final String name;
@@ -14,7 +15,6 @@ public class VariableExpression implements Expression {
     @Override
     public Value evaluate() {
         if(!Variables.isExists(name)){
-//            throw new RuntimeException("Constant does not exists");
             Variables.set(name, new NumberValue(0));
         }
         return Variables.get(name);

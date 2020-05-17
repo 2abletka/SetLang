@@ -1,6 +1,7 @@
 package com.compiler.parser.sintaxtree;
 
-import com.compiler.variables.Variables;
+import com.compiler.Context;
+import com.compiler.vars.Variables;
 
 public class ForStatement implements Statement {
     private Statement initStatement;
@@ -18,10 +19,6 @@ public class ForStatement implements Statement {
     @Override
     public void execute() {
         Variables.set(((AssignmentStatement) initStatement).getVariable(), ((AssignmentStatement) initStatement).getExpression().evaluate());
-
-        /*
-         * Write to file
-         * */
         Context.appendNewString("for (double " + initStatement.toString());
         Context.appendCurrentString("; ");
         Context.appendCurrentString(termination.toString());
@@ -30,15 +27,5 @@ public class ForStatement implements Statement {
         Context.appendCurrentString(") {");
         block.execute();
         Context.appendNewString(" }");
-
-//        for (initStatement.execute(); termination.evaluate().asNumber() != 0; increment.execute()) {
-//            try {
-//                block.execute();
-//            } catch (BreakStatement e) {
-//                break;
-//            } catch (ContinueStatement e) {
-//                continue;
-//            }
-//        }
     }
 }

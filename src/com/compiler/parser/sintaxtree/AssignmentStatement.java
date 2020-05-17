@@ -1,7 +1,9 @@
 package com.compiler.parser.sintaxtree;
 
-import com.compiler.variables.Value;
-import com.compiler.variables.Variables;
+
+import com.compiler.Context;
+import com.compiler.vars.Value;
+import com.compiler.vars.Variables;
 
 public class AssignmentStatement implements Statement {
     private final String variable;
@@ -15,10 +17,6 @@ public class AssignmentStatement implements Statement {
     @Override
     public void execute() {
         final Value result = expression.evaluate();
-
-        /*
-         * Write to file
-         * */
         if (Variables.isExists(variable)) {
             Context.appendNewString(variable + " = " + expression);
         } else {
