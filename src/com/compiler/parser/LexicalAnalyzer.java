@@ -1,3 +1,8 @@
+/*
+ Lexical Analyzer was created by vectorforse
+*/
+
+
 package com.compiler.parser;
 
 import java.util.ArrayList;
