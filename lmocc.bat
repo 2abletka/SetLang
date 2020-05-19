@@ -1,4 +1,7 @@
-javac -sourcepath ./src -d bin src/main/java/com/vectorforce/compiler/Compiler.java %1
-java -classpath ./bin main.java.com.vectorforce.compiler.Compiler
+javac -sourcepath ./src -d bin src/com/compiler/Compiler.java %1 
+
+java -classpath ./bin com.compiler.Compiler
+
 javac Main.java
+ 
 java Main
