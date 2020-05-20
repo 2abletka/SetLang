@@ -1,4 +1,2 @@
-javac -sourcepath ./src -d bin src/com/compiler/Compiler.java 
-java -classpath ./bin com.compiler.Compiler %1
-javac Main.java
-java Main
+call Compile.bat %1
+call Run.bat
